@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaReservasBLL\SistemaReservasBLL.csproj" />
+    <ProjectReference Include="..\SistemaReservasDAL\SistemaReservasDAL.csproj" />
+    <ProjectReference Include="..\SistemaReservasUtility\SistemaReservasUtility.csproj" />
+  </ItemGroup>
+
 </Project>
