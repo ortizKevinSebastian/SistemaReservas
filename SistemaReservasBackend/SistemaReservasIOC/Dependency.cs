@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SistemaReservasDAL;
+using SistemaReservasDAL.Repositories;
+using SistemaReservasDAL.Repositories.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,9 @@ namespace SistemaReservasIOC
             services.AddDbContext<DbReservaContext>(options => {
                 options.UseSqlServer(configuration.GetConnectionString("dbString"));
             });
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IReservaRepository, ReservaRepository>();
         } 
     }
 }
