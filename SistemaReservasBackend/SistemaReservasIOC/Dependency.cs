@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SistemaReservasDAL;
 using SistemaReservasDAL.Repositories;
 using SistemaReservasDAL.Repositories.Contract;
+using SistemaReservasUtility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,9 @@ namespace SistemaReservasIOC
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IReservaRepository, ReservaRepository>();
+
+            //Automapper
+            services.AddAutoMapper(typeof(AutoMapperProfile));
         } 
     }
 }
