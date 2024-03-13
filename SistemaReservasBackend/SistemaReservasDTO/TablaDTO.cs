@@ -12,6 +12,8 @@ namespace SistemaReservasDTO
 
         public string? TotalIngresos { get; set; }
 
+        public int TotalEspacios { get; set; }
+
         public List<ReservaSemanaDTO> ReservasUltimaSemana { get; set; }
     }
 }
